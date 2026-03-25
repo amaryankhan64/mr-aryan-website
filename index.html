@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mr Aryan Resume Service</title>
 
 <style>
@@ -19,10 +19,19 @@ body{
   color:var(--text);
 }
 
+/* HEADER FIX */
 header{
   background:#0f172a;
-  padding:15px 25px;
-  text-align:center;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+header img{
+  width:35px;
+  height:35px;
+  border-radius:50%;
 }
 
 .hero{
@@ -75,7 +84,7 @@ header{
 }
 
 .service-card{
-  max-width:1000px;
+  max-width:900px;
   margin:20px auto;
   background:#0f172a;
   padding:25px;
@@ -88,24 +97,19 @@ header{
   gap:20px;
 }
 
+/* IMAGE FIX (FULL SHOW) */
 .resume-card{
   background:#020617;
   padding:10px;
   border-radius:12px;
   text-align:center;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.resume-card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px #22c55e;
 }
 
 .resume-card img{
   width:100%;
-  height:250px;
-  object-fit:cover;
+  height:auto;   /* FIXED */
+  object-fit:contain; /* FIXED */
   border-radius:10px;
 }
 
@@ -148,7 +152,6 @@ header{
   font-weight:bold;
 }
 
-/* SOCIAL */
 .social{
   text-align:center;
   margin-top:80px;
@@ -179,13 +182,16 @@ footer{
 
 <body>
 
+<!-- HEADER FIXED -->
 <header>
+  <img src="https://i.postimg.cc/9rh0gNNC/profile.jpg">
   <b>Mr Aryan</b>
 </header>
 
 <section class="hero">
   <img src="https://i.postimg.cc/9rh0gNNC/profile.jpg" class="hero-img">
-  <div class="hero-title">Mr Aryan Resume Expert</div>
+  <div class="hero-title">Mr Aryan</div>
+
   <div class="hero-text">
     💼 Expert Resume & LinkedIn Optimization <br>
     ✨ Trusted by 2,000+ Job Seekers Worldwide <br>
@@ -261,7 +267,7 @@ footer{
 
 <footer>
   © 2025 Mr Aryan Resume Services. All Rights Reserved. |
-  <a href="privacy.html" style="color:#22c55e; text-decoration:none;">Privacy Policy</a>
+  <a href="privacy.html" style="color:#22c55e;">Privacy Policy</a>
 </footer>
 
 <script>
@@ -278,7 +284,6 @@ function closeModal(){
   document.getElementById("previewModal").style.display="none";
 }
 
-/* EXTRA: click outside to close modal */
 window.onclick = function(e){
   let modal = document.getElementById("previewModal");
   if(e.target === modal){
