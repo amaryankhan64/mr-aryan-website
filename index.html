@@ -19,7 +19,7 @@ body{
   color:var(--text);
 }
 
-/* HEADER FIX */
+/* HEADER */
 header{
   background:#0f172a;
   padding:12px 20px;
@@ -29,36 +29,59 @@ header{
 }
 
 header img{
-  width:35px;
-  height:35px;
+  width:40px;
+  height:40px;
   border-radius:50%;
+  object-fit:cover;
 }
 
+/* HERO */
 .hero{
   text-align:center;
   padding:70px 20px;
 }
 
+/* 🔥 GLOW ANIMATION */
 .hero-img{
-  width:160px;
-  height:160px;
+  width:180px;
+  height:180px;
   border-radius:50%;
   object-fit:cover;
-  box-shadow:0 0 25px rgba(34,197,94,0.6);
+  animation: glow 2s infinite alternate;
 }
 
+@keyframes glow {
+  0% { box-shadow:0 0 10px #22c55e; }
+  100% { box-shadow:0 0 40px #22c55e; }
+}
+
+/* TEXT ANIMATION */
 .hero-title{
   font-size:2.5rem;
   font-weight:800;
   margin-top:20px;
+  animation: fadeUp 1s ease;
 }
 
 .hero-text{
   margin-top:15px;
   line-height:1.8;
   color:#cbd5f5;
+  animation: fadeUp 1.5s ease;
 }
 
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* BUTTON */
 .btn{
   display:inline-block;
   padding:12px 22px;
@@ -66,6 +89,7 @@ header img{
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
+  transition:0.3s;
 }
 
 .btn-primary{
@@ -73,6 +97,11 @@ header img{
   color:black;
 }
 
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* SECTION */
 .section{
   margin-top:70px;
 }
@@ -83,6 +112,7 @@ header img{
   font-size:24px;
 }
 
+/* CARD */
 .service-card{
   max-width:900px;
   margin:20px auto;
@@ -91,25 +121,33 @@ header img{
   border-radius:15px;
 }
 
+/* GRID */
 .resume-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
-/* IMAGE FIX (FULL SHOW) */
+/* 🔥 ZOOM EFFECT */
 .resume-card{
   background:#020617;
   padding:10px;
   border-radius:12px;
   text-align:center;
   cursor:pointer;
+  transition:0.3s;
 }
 
+.resume-card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 15px #22c55e;
+}
+
+/* IMAGE FULL SHOW */
 .resume-card img{
   width:100%;
-  height:auto;   /* FIXED */
-  object-fit:contain; /* FIXED */
+  height:auto;
+  object-fit:contain;
   border-radius:10px;
 }
 
@@ -152,6 +190,7 @@ header img{
   font-weight:bold;
 }
 
+/* SOCIAL */
 .social{
   text-align:center;
   margin-top:80px;
@@ -182,15 +221,15 @@ footer{
 
 <body>
 
-<!-- HEADER FIXED -->
 <header>
-  <img src="https://i.postimg.cc/9rh0gNNC/profile.jpg">
-  <b>Mr Aryan</b>
+  <img src="https://i.postimg.cc/HksD78PV/my-photo.jpg">
+  <b>Mr Aryan Resume Expert</b>
 </header>
 
 <section class="hero">
-  <img src="https://i.postimg.cc/9rh0gNNC/profile.jpg" class="hero-img">
-  <div class="hero-title">Mr Aryan</div>
+  <img src="https://i.postimg.cc/HksD78PV/my-photo.jpg" class="hero-img">
+
+  <div class="hero-title">Mr Aryan Resume Expert</div>
 
   <div class="hero-text">
     💼 Expert Resume & LinkedIn Optimization <br>
@@ -247,7 +286,6 @@ footer{
 </div>
 </section>
 
-<!-- MODAL -->
 <div id="previewModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
   <img id="modalImg">
@@ -255,7 +293,6 @@ footer{
   <a id="whatsappBtn" target="_blank">Order on WhatsApp</a>
 </div>
 
-<!-- SOCIAL -->
 <div class="social">
   <h2 class="section-title">Follow Me</h2>
 
@@ -265,10 +302,37 @@ footer{
   <a class="linkedin" href="https://www.linkedin.com/in/mraryanresume/" target="_blank">LinkedIn</a>
 </div>
 
+<!-- FOOTER -->
 <footer>
   © 2025 Mr Aryan Resume Services. All Rights Reserved. |
-  <a href="privacy.html" style="color:#22c55e;">Privacy Policy</a>
+  <a href="privacy.html" style="color:#22c55e; text-decoration:none;">Privacy Policy</a> |
+  <a href="terms.html" style="color:#22c55e; text-decoration:none;">Terms & Conditions</a>
 </footer>
+
+<script>
+function openPreview(img,type){
+  document.getElementById("previewModal").style.display="block";
+  document.getElementById("modalImg").src=img;
+
+  let msg = "Hi, I want this " + type;
+  document.getElementById("whatsappBtn").href =
+  "https://wa.me/917404836378?text=" + encodeURIComponent(msg);
+}
+
+function closeModal(){
+  document.getElementById("previewModal").style.display="none";
+}
+
+window.onclick = function(e){
+  let modal = document.getElementById("previewModal");
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
 
 <script>
 function openPreview(img,type){
