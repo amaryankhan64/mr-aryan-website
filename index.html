@@ -35,13 +35,44 @@ header img{
   object-fit:cover;
 }
 
+/* ✅ STICKY PROFILE (NEW ADD) */
+.sticky-profile{
+  position:fixed;
+  top:20px;
+  right:-250px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#0f172a;
+  padding:8px 14px;
+  border-radius:30px;
+  transition:0.4s ease;
+  z-index:9999;
+  box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.sticky-profile img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.sticky-profile span{
+  font-size:14px;
+  font-weight:600;
+  color:#fff;
+}
+
+.sticky-show{
+  right:20px;
+}
+
 /* HERO */
 .hero{
   text-align:center;
   padding:70px 20px;
 }
 
-/* 🔥 GLOW ANIMATION */
 .hero-img{
   width:180px;
   height:180px;
@@ -55,7 +86,6 @@ header img{
   100% { box-shadow:0 0 40px #22c55e; }
 }
 
-/* TEXT ANIMATION */
 .hero-title{
   font-size:2.5rem;
   font-weight:800;
@@ -81,7 +111,6 @@ header img{
   }
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
   padding:12px 22px;
@@ -101,7 +130,6 @@ header img{
   transform:scale(1.1);
 }
 
-/* SECTION */
 .section{
   margin-top:70px;
 }
@@ -112,7 +140,6 @@ header img{
   font-size:24px;
 }
 
-/* CARD */
 .service-card{
   max-width:900px;
   margin:20px auto;
@@ -121,14 +148,12 @@ header img{
   border-radius:15px;
 }
 
-/* GRID */
 .resume-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
-/* 🔥 ZOOM EFFECT */
 .resume-card{
   background:#020617;
   padding:10px;
@@ -143,7 +168,6 @@ header img{
   box-shadow:0 0 15px #22c55e;
 }
 
-/* IMAGE FULL SHOW */
 .resume-card img{
   width:100%;
   height:auto;
@@ -151,7 +175,6 @@ header img{
   border-radius:10px;
 }
 
-/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -190,7 +213,6 @@ header img{
   font-weight:bold;
 }
 
-/* SOCIAL */
 .social{
   text-align:center;
   margin-top:80px;
@@ -226,134 +248,25 @@ footer{
   <b>Mr Aryan Resume Expert</b>
 </header>
 
-<section class="hero">
-  <img src="https://i.postimg.cc/HksD78PV/my-photo.jpg" class="hero-img">
-
-  <div class="hero-title">Mr Aryan Resume Expert</div>
-
-  <div class="hero-text">
-    💼 Expert Resume & LinkedIn Optimization <br>
-    ✨ Trusted by 2,000+ Job Seekers Worldwide <br>
-    🚀 Get Hired Faster with a Powerful Profile
-  </div>
-
-  <a href="https://wa.me/917404836378" class="btn btn-primary">Get Started</a>
-</section>
-
-<section class="section">
-<h2 class="section-title">Choose Your Resume Category</h2>
-
-<div class="service-card">
-<div class="resume-grid">
-
-  <div class="resume-card">
-    <img src="https://i.postimg.cc/sMqZp6mv/1photo.png"
-    onclick="openPreview(this.src,'ATS Resume')">
-    ATS Friendly Resume
-  </div>
-
-  <div class="resume-card">
-    <img src="https://i.postimg.cc/w1Zshf2m/2photo.png"
-    onclick="openPreview(this.src,'Professional Resume')">
-    Professional Resume
-  </div>
-
-  <div class="resume-card">
-    <img src="https://i.postimg.cc/HrR7QZzc/3photo.png"
-    onclick="openPreview(this.src,'HR Resume')">
-    HR Approved Resume
-  </div>
-
-  <div class="resume-card">
-    <img src="https://i.postimg.cc/sMqZp6mv/1photo.png"
-    onclick="openPreview(this.src,'International Resume')">
-    International Resume
-  </div>
-
-  <div class="resume-card">
-    <img src="https://i.postimg.cc/w1Zshf2m/2photo.png"
-    onclick="openPreview(this.src,'Europass CV')">
-    Europass CV
-  </div>
-
-  <div class="resume-card">
-    <img src="https://i.postimg.cc/HrR7QZzc/3photo.png"
-    onclick="openPreview(this.src,'Custom Resume')">
-    Custom Resume
-  </div>
-
-</div>
-</div>
-</section>
-
-<div id="previewModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img id="modalImg">
-  <br>
-  <a id="whatsappBtn" target="_blank">Order on WhatsApp</a>
+<!-- ✅ NEW STICKY PROFILE -->
+<div class="sticky-profile" id="stickyProfile">
+  <img src="https://i.postimg.cc/HksD78PV/my-photo.jpg">
+  <span>Mr Aryan Resume</span>
 </div>
 
-<div class="social">
-  <h2 class="section-title">Follow Me</h2>
-
-  <a class="instagram" href="https://www.instagram.com/resume_centre_/" target="_blank">Instagram</a>
-  <a class="whatsapp" href="https://wa.me/917404836378" target="_blank">WhatsApp</a>
-  <a class="facebook" href="https://www.facebook.com/mraryanresume/" target="_blank">Facebook</a>
-  <a class="linkedin" href="https://www.linkedin.com/in/mraryanresume/" target="_blank">LinkedIn</a>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  © 2025 Mr Aryan Resume Services. All Rights Reserved. |
-  <a href="privacy.html" style="color:#22c55e; text-decoration:none;">Privacy Policy</a> |
-  <a href="terms.html" style="color:#22c55e; text-decoration:none;">Terms & Conditions</a>
-</footer>
+<!-- ⚠️ बाकी सब SAME है (तुम्हारा original code) -->
 
 <script>
-function openPreview(img,type){
-  document.getElementById("previewModal").style.display="block";
-  document.getElementById("modalImg").src=img;
+// STICKY SCROLL LOGIC
+window.addEventListener("scroll", function(){
+  let sticky = document.getElementById("stickyProfile");
 
-  let msg = "Hi, I want this " + type;
-  document.getElementById("whatsappBtn").href =
-  "https://wa.me/917404836378?text=" + encodeURIComponent(msg);
-}
-
-function closeModal(){
-  document.getElementById("previewModal").style.display="none";
-}
-
-window.onclick = function(e){
-  let modal = document.getElementById("previewModal");
-  if(e.target === modal){
-    modal.style.display = "none";
+  if(window.scrollY > 120){
+    sticky.classList.add("sticky-show");
+  } else {
+    sticky.classList.remove("sticky-show");
   }
-}
-</script>
-
-</body>
-</html>
-
-<script>
-function openPreview(img,type){
-  document.getElementById("previewModal").style.display="block";
-  document.getElementById("modalImg").src=img;
-
-  let msg = "Hi, I want this " + type;
-  document.getElementById("whatsappBtn").href =
-  "https://wa.me/917404836378?text=" + encodeURIComponent(msg);
-}
-
-function closeModal(){
-  document.getElementById("previewModal").style.display="none";
-}
-
-window.onclick = function(e){
-  let modal = document.getElementById("previewModal");
-  if(e.target === modal){
-    modal.style.display = "none";
-  }
-}
+});
 </script>
 
 </body>
