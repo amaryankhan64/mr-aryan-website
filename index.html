@@ -39,7 +39,7 @@ header img{
 .sticky-profile{
   position:fixed;
   top:20px;
-  right:-250px;
+  right:-260px;
   display:flex;
   align-items:center;
   gap:10px;
@@ -72,7 +72,6 @@ header img{
   padding:70px 20px;
 }
 
-/* GLOW */
 .hero-img{
   width:180px;
   height:180px;
@@ -101,8 +100,14 @@ header img{
 }
 
 @keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .btn{
@@ -262,7 +267,73 @@ footer{
   <a href="https://wa.me/917404836378" class="btn btn-primary">Get Started</a>
 </section>
 
-<!-- ✅ REST SAME (तुम्हारा पूरा original code untouched) -->
+<section class="section">
+<h2 class="section-title">Choose Your Resume Category</h2>
+
+<div class="service-card">
+<div class="resume-grid">
+
+  <div class="resume-card">
+    <img src="https://i.postimg.cc/sMqZp6mv/1photo.png"
+    onclick="openPreview(this.src,'ATS Resume')">
+    ATS Friendly Resume
+  </div>
+
+  <div class="resume-card">
+    <img src="https://i.postimg.cc/w1Zshf2m/2photo.png"
+    onclick="openPreview(this.src,'Professional Resume')">
+    Professional Resume
+  </div>
+
+  <div class="resume-card">
+    <img src="https://i.postimg.cc/HrR7QZzc/3photo.png"
+    onclick="openPreview(this.src,'HR Resume')">
+    HR Approved Resume
+  </div>
+
+  <div class="resume-card">
+    <img src="https://i.postimg.cc/sMqZp6mv/1photo.png"
+    onclick="openPreview(this.src,'International Resume')">
+    International Resume
+  </div>
+
+  <div class="resume-card">
+    <img src="https://i.postimg.cc/w1Zshf2m/2photo.png"
+    onclick="openPreview(this.src,'Europass CV')">
+    Europass CV
+  </div>
+
+  <div class="resume-card">
+    <img src="https://i.postimg.cc/HrR7QZzc/3photo.png"
+    onclick="openPreview(this.src,'Custom Resume')">
+    Custom Resume
+  </div>
+
+</div>
+</div>
+</section>
+
+<div id="previewModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="modalImg">
+  <br>
+  <a id="whatsappBtn" target="_blank">Order on WhatsApp</a>
+</div>
+
+<div class="social">
+  <h2 class="section-title">Follow Me</h2>
+
+  <a class="instagram" href="https://www.instagram.com/resume_centre_/" target="_blank">Instagram</a>
+  <a class="whatsapp" href="https://wa.me/917404836378" target="_blank">WhatsApp</a>
+  <a class="facebook" href="https://www.facebook.com/mraryanresume/" target="_blank">Facebook</a>
+  <a class="linkedin" href="https://www.linkedin.com/in/mraryanresume/" target="_blank">LinkedIn</a>
+</div>
+
+<footer>
+  © 2025 Mr Aryan Resume Services. All Rights Reserved. |
+  <a href="privacy.html" style="color:#22c55e;">Privacy Policy</a> |
+  <a href="terms.html" style="color:#22c55e;">Terms & Conditions</a>
+</footer>
 
 <script>
 function openPreview(img,type){
@@ -285,7 +356,7 @@ window.onclick = function(e){
   }
 }
 
-/* ✅ STICKY LOGIC */
+/* ✅ STICKY SCROLL */
 window.addEventListener("scroll", function(){
   let sticky = document.getElementById("stickyProfile");
 
