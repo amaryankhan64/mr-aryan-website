@@ -35,7 +35,7 @@ header img{
   object-fit:cover;
 }
 
-/* ✅ STICKY PROFILE (NEW ADD) */
+/* 🔥 STICKY PROFILE */
 .sticky-profile{
   position:fixed;
   top:20px;
@@ -48,7 +48,6 @@ header img{
   border-radius:30px;
   transition:0.4s ease;
   z-index:9999;
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 .sticky-profile img{
@@ -101,14 +100,8 @@ header img{
 }
 
 @keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 .btn{
@@ -248,16 +241,47 @@ footer{
   <b>Mr Aryan Resume Expert</b>
 </header>
 
-<!-- ✅ NEW STICKY PROFILE -->
+<!-- STICKY PROFILE -->
 <div class="sticky-profile" id="stickyProfile">
   <img src="https://i.postimg.cc/HksD78PV/my-photo.jpg">
   <span>Mr Aryan Resume</span>
 </div>
 
-<!-- ⚠️ बाकी सब SAME है (तुम्हारा original code) -->
+<section class="hero">
+  <img src="https://i.postimg.cc/HksD78PV/my-photo.jpg" class="hero-img">
+  <div class="hero-title">Mr Aryan Resume Expert</div>
+  <div class="hero-text">
+    💼 Expert Resume & LinkedIn Optimization <br>
+    ✨ Trusted by 2,000+ Job Seekers Worldwide <br>
+    🚀 Get Hired Faster with a Powerful Profile
+  </div>
+  <a href="https://wa.me/917404836378" class="btn btn-primary">Get Started</a>
+</section>
+
+<!-- (बाकी तुम्हारा same code जैसे services, modal, social, footer — unchanged रहेगा) -->
 
 <script>
-// STICKY SCROLL LOGIC
+function openPreview(img,type){
+  document.getElementById("previewModal").style.display="block";
+  document.getElementById("modalImg").src=img;
+
+  let msg = "Hi, I want this " + type;
+  document.getElementById("whatsappBtn").href =
+  "https://wa.me/917404836378?text=" + encodeURIComponent(msg);
+}
+
+function closeModal(){
+  document.getElementById("previewModal").style.display="none";
+}
+
+window.onclick = function(e){
+  let modal = document.getElementById("previewModal");
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+}
+
+/* STICKY SCROLL */
 window.addEventListener("scroll", function(){
   let sticky = document.getElementById("stickyProfile");
 
